@@ -4,8 +4,3 @@ class Transaction {
         this.counterParty = counterParty;
     }
 }
-
-let transaction = new Transaction(50, 'John Doe');
-let transactionStr = JSON.stringify(transaction);
-
-console.log(transactionStr);
