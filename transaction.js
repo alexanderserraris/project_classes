@@ -1,25 +1,26 @@
 class Transaction {
-    constructor(amount, counterparty) {
-        this.amount = parseInt(amount, 10);
-        this.counterparty = counterparty;
+    constructor(amount, sender, receiver) {
+        this.amount = amount;
+        this.sender = sender;
+        this.receiver = receiver;
     }
 
-    toString() {
-        return `Transactie(bedrag: ${this.amount} €, tegenpartij: ${this.counterparty})`;
+    print() {
+        console.log(`${this.sender} sent ${this.amount} bits to ${this.receiver}`);
     }
 }
 
-let transactions = [];
+// let transactions = [];
 
-function createTransaction() {
-    let amount = document.getElementById("amount").value;
-    let counterparty = document.getElementById("counterparty").value;
+// function createTransaction() {
+//     let amount = document.getElementById("amount").value;
+//     let counterparty = document.getElementById("counterparty").value;
 
-    let transaction = new Transaction(amount, counterparty);
-    console.log(`Nieuwe ${transaction.toString()}`);
+//     let transaction = new Transaction(amount, counterparty);
+//     console.log(`Nieuwe ${transaction.toString()}`);
 
-    transactions.push(transaction);
-    let transactionStrList = transactions.map(t => t.toString());
-    console.log("ALLE TRANSACTIES", transactionStrList);
-}
+//     transactions.push(transaction);
+//     let transactionStrList = transactions.map(t => t.toString());
+//     console.log("ALLE TRANSACTIES", transactionStrList);
+// }
 
