@@ -1,16 +1,4 @@
-class Transaction {
-    constructor(amount, sender, receiver) {
-        this.amount = amount;
-        this.sender = sender;
-        this.receiver = receiver;
-    }
-
-    print() {
-        console.log(`${this.sender} sent ${this.amount} bits to ${this.receiver}`);
-    }
-}
-
-let transactions = [];
+import Transaction from "./models/transaction.js";
 
 function createTransaction() {
     let amount = document.getElementById("amount").value;
@@ -22,3 +10,5 @@ function createTransaction() {
     document.querySelector("form").reset();
 }
 
+let createTransactionButton = document.getElementById("createTransaction");
+createTransactionButton.addEventListener("click", createTransaction);
