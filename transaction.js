@@ -10,17 +10,15 @@ class Transaction {
     }
 }
 
-// let transactions = [];
+let transactions = [];
 
-// function createTransaction() {
-//     let amount = document.getElementById("amount").value;
-//     let counterparty = document.getElementById("counterparty").value;
+function createTransaction() {
+    let amount = document.getElementById("amount").value;
+    let sender = document.getElementById("sender").value;
+    let receiver = document.getElementById("receiver").value;
 
-//     let transaction = new Transaction(amount, counterparty);
-//     console.log(`Nieuwe ${transaction.toString()}`);
-
-//     transactions.push(transaction);
-//     let transactionStrList = transactions.map(t => t.toString());
-//     console.log("ALLE TRANSACTIES", transactionStrList);
-// }
+    let transaction = new Transaction(amount, sender, receiver);
+    transaction.print();
+    document.querySelector("form").reset();
+}
 
