@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="transaction.js"></script>
+    <script type="module" src="add-transaction.js"></script>
 </head>
 
 <body class="d-flex justify-content-center align-items-center vh-100">
@@ -32,7 +32,7 @@
                 <label class="form-label">Ontvanger</label>
                 <input type="text" class="form-control" id="receiver">
             </div>
-            <button onclick=createTransaction() class="btn btn-primary">Maak transactie</button>
+            <button id="createTransaction" class="btn btn-primary">Maak transactie</button>
         </form>
     </div>
 </body>

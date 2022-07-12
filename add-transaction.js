@@ -1,14 +1,4 @@
-class Transaction {
-    constructor(amount, sender, receiver) {
-        this.amount = amount;
-        this.sender = sender;
-        this.receiver = receiver;
-    }
-
-    print() {
-        console.log(`${this.sender} sent ${this.amount} bits to ${this.receiver}`);
-    }
-}
+import Transaction from "./models/transaction.js";
 
 let transactions = JSON.parse(localStorage.getItem("transactions"));
 if (transactions === null) {
@@ -29,3 +19,5 @@ function createTransaction() {
     localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
+let createTransactionButton = document.getElementById("createTransaction");
+createTransactionButton.addEventListener("click", createTransaction);
