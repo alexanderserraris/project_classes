@@ -10,7 +10,11 @@ class Transaction {
     }
 }
 
-let transactions = [];
+let transactions = JSON.parse(localStorage.getItem("transactions"));
+if (transactions === null) {
+    transactions = [];
+}
+console.log(transactions);
 
 function createTransaction() {
     let amount = document.getElementById("amount").value;
@@ -20,5 +24,8 @@ function createTransaction() {
     let transaction = new Transaction(amount, sender, receiver);
     transaction.print();
     document.querySelector("form").reset();
+
+    transactions.push(transaction);
+    localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
