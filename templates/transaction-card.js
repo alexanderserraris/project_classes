@@ -8,7 +8,7 @@ const transactionCard = {
 
 const transactionHeaderDiv = {
     type: 'div',
-    class: 'd-flex justify-content-between',
+    class: 'd-flex justify-content-left',
 };
 
 const transactionHeaderText = (innerText) => ({
@@ -25,7 +25,7 @@ const transactionArrowIcon = {
 
 const transactionLowerColDiv = {
     type: 'div',
-    class: 'col-sm',
+    class: 'col',
 };
 
 const transactionLowerDiv = {
@@ -41,7 +41,10 @@ const transactionLowerPElement = (innerText) => ({
 
 export default function makeTransactionCard(transaction) {
     // header
-    let headerDiv = domUtils.createElement(transactionHeaderDiv, [transactionHeaderText(transaction.amount)]);
+    let headerDiv = domUtils.createElement(transactionHeaderDiv, [
+        transactionHeaderText(transaction.amount),
+        { type: 'small', class: 'text-muted', innerText: 'bits' },
+    ]);
 
     // lower
     let senderCol = domUtils.createElement(transactionLowerColDiv, [transactionLowerPElement(transaction.sender)]);

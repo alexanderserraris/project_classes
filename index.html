@@ -15,26 +15,30 @@
     <script type="module" src="index.js"></script>
 </head>
 
-<body class="d-flex flex-column align-items-center vh-100">
-    <h1>Transacties</h1>
-    <div id="transaction-list" class="list-group">
-        <a name="transaction-card" href="#" class="list-group-item list-group-item-action">
-            <!-- Template card for reference-->
-            <div class="d-flex justify-content-between">
-                <h3 name="amount" class="mb-0">{amount}</h3>
-            </div>
-            <div class="row align-items-center">
-                <div class="col">
-                    <p name="sender" class="m-0">{sender}asdddddd</p>
+<body class="d-flex flex-row vh-100 vw-100 justify-content-center">
+    <div class="d-flex flex-column align-items-center">
+        <h2>Transacties</h2>
+        <a href="add-transaction.html" class="pb-2">Voeg transactie toe</a>
+        <div id="transaction-list" class="list-group">
+            <a name="transaction-card" href="#" class="list-group-item list-group-item-action">
+                <!-- Template card for reference-->
+                <div class="d-flex justify-content-left align-items-bottom">
+                    <h3 name="amount" class="mb-0">{amount}</h3>
+                    <small class="text-muted">bits</small>
                 </div>
-                <div class="col px-0">
-                    <i class="fa fa-arrow-right"></i>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <p name="sender" class="m-0">{sender}asdddddd</p>
+                    </div>
+                    <div class="col px-0">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                    <div class="col">
+                        <p name="receiver" class="m-0">{receiver}</p>
+                    </div>
                 </div>
-                <div class="col">
-                    <p name="receiver" class="m-0">{receiver}</p>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </body>
 
