@@ -8,8 +8,8 @@ const domUtils = {
      */
     createElement: (o, children = [], createChildren = true) => {
         const customProperties = ['type', 'class'];
-        let type = o.type || 'div';
-        let el = document.createElement(type);
+        const type = o.type || 'div';
+        const el = document.createElement(type);
 
         // add all other properties
         for (const key of Object.keys(o)) {
@@ -18,7 +18,7 @@ const domUtils = {
             }
         }
         // add classes
-        let classes = o.class.split(' ') || [];
+        const classes = o.class.split(' ') || [];
         classes.forEach(c => el.classList.add(c));
 
         // add children

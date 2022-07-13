@@ -24,17 +24,17 @@ const transactionArrowIcon = {
     class: 'fa fa-arrow-right',
 };
 
-let transactionLowerColDiv = {
+const transactionLowerColDiv = {
     type: 'div',
     class: 'col',
 };
 
-let transactionLowerDiv = {
+const transactionLowerDiv = {
     type: 'div',
     class: 'row align-items-center',
 };
 
-let transactionLowerPElement = (innerText) => ({
+const transactionLowerPElement = (innerText) => ({
     type: 'p',
     class: 'm-0',
     innerText: innerText,
