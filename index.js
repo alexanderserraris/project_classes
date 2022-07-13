@@ -2,17 +2,18 @@ import Template from "./util/templater.js";
 import TransactionList from "./models/transactionslist.js";
 
 
+function render() {
+    const transactions = new TransactionList(JSON.parse(localStorage.getItem('transactions')));
+    (new Template("statistics-table")).render({
+        min: transactions.min,
+        max: transactions.max,
+        average: transactions.average,
+    });
 
-const transactions = new TransactionList(JSON.parse(localStorage.getItem('transactions')));
+    transactions.forEach(t => {
+        let template = new Template('transaction-card');
+        template.render(t);
+    });
+}
 
-// let statistics = new Template("statistics-table");
-// statistics.render({
-//     min: transactions.min,
-//     max: transactions.max,
-//     average: transactions.average,
-// });
-
-transactions.forEach(t => {
-    let template = new Template('transaction-card');
-    template.render(t);
-});
+render();
