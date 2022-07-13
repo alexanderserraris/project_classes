@@ -2,7 +2,7 @@
 
 function bindData(html, data) {
     for (const [key, value] of Object.entries(data)) {
-        let element = html.querySelector(`[data-bind="${key}"]`);
+        let element = html.querySelector(`[data="${key}"]`);
         if (element) {
             element.innerText = value;
         }
