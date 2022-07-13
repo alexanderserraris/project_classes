@@ -7,7 +7,7 @@ function render() {
     (new Template("statistics-table")).render({
         min: transactions.min,
         max: transactions.max,
-        average: transactions.average,
+        average: Math.round(transactions.average, 2),
     });
 
     transactions.forEach(t => {
