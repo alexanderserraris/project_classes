@@ -17,6 +17,7 @@ function createTransaction() {
 
     transactions.push(transaction);
     localStorage.setItem("transactions", JSON.stringify(transactions));
+    document.getElementById('notification').classList.remove('invisible');
 }
 
 let createTransactionButton = document.getElementById("createTransaction");
