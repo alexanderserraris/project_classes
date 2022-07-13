@@ -1,5 +1,3 @@
-// import makeTransactionCard from "./templates/transaction-card.js";
-
 function bindData(html, data) {
     for (const [key, value] of Object.entries(data)) {
         let element = html.querySelector(`[data="${key}"]`);
