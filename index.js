@@ -5,7 +5,7 @@ function showTransactions() {
 
     let transactionList = document.getElementById('transaction-list');
     let child = transactionList.lastElementChild;
-    while (child) { // remove children of the list
+    while (child) { // remove children of the current list
         transactionList.removeChild(child);
         child = transactionList.lastElementChild;
     }
