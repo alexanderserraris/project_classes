@@ -8,6 +8,8 @@ function createTransaction() {
     let transaction = new Transaction(amount, sender, receiver);
     transaction.print();
     document.querySelector("form").reset();
+    // document.getElementById('notification').innerText = "Transactie gemaakt!";
+    document.getElementById('notification').classList.remove('invisible');
 }
 
 let createTransactionButton = document.getElementById("createTransaction");
