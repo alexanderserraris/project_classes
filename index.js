@@ -1,27 +1,18 @@
-// import makeTransactionCard from "./templates/transaction-card.js";
-
-function bindData(html, data) {
-    for (const [key, value] of Object.entries(data)) {
-        let element = html.querySelector(`[data="${key}"]`);
-        if (element) {
-            element.innerText = value;
-        }
-    }
-    return html;
-}
+import Template from "./util/templater.js";
+import TransactionList from "./models/transactionslist.js";
 
 
-function showTransactions() {
-    let transactions = JSON.parse(localStorage.getItem('transactions'));
 
-    let transactionList = document.getElementById('transaction-list');
+const transactions = new TransactionList(JSON.parse(localStorage.getItem('transactions')));
 
-    let card = document.querySelector('#transaction-card');
-    for (let transaction of transactions) {
-        let clone = card.content.cloneNode(true);
-        let cloneWithData = bindData(clone, transaction);
-        transactionList.appendChild(cloneWithData);
-    }
-}
+// let statistics = new Template("statistics-table");
+// statistics.render({
+//     min: transactions.min,
+//     max: transactions.max,
+//     average: transactions.average,
+// });
 
-showTransactions();
+transactions.forEach(t => {
+    let template = new Template('transaction-card');
+    template.render(t);
+});

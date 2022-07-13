@@ -19,6 +19,24 @@
     <div class="d-flex flex-column align-items-center">
         <h2>Transacties</h2>
         <a href="add-transaction.html" class="pb-2">Voeg transactie toe</a>
+        <template id="statistics-table">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Gemiddeld</th>
+                    <td data="average">500 <small class="text-muted">bits</small></td>
+                </tr>
+                <tr>
+                    <th scope="row">Minimum </th>
+                    <td data="min">0 <small class="text-muted">bits</small></td>
+                </tr>
+                <tr>
+                    <th scope="row">Maximum</th>
+                    <td data="max">9000 <small class="text-muted">bits</small></td>
+                </tr>
+            </tbody>
+        </table>
+        </template>
         <div id="transaction-list" class="list-group">
             <template id="transaction-card">
                 <a name="" href="#" class="list-group-item list-group-item-action">
